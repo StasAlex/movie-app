@@ -7,6 +7,7 @@ const ExplorePage = () => {
   const params = useParams()
   const [pageNo,setPageNo] = useState(1)
   const [data,setData] = useState([])
+  // eslint-disable-next-line no-unused-vars
   const [totalPageNo,setTotalPageNo] = useState(0)
 
   const fetchData = async()=>{
@@ -36,12 +37,14 @@ const ExplorePage = () => {
 
   useEffect(()=>{
     fetchData()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[pageNo])
 
   useEffect(()=>{
       setPageNo(1)
       setData([])
       fetchData()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[params.explore])
 
   useEffect(()=>{
