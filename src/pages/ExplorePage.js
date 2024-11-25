@@ -9,8 +9,6 @@ const ExplorePage = () => {
   const [data,setData] = useState([])
   const [totalPageNo,setTotalPageNo] = useState(0)
 
-  console.log("params",params.explore)
-
   const fetchData = async()=>{
     try {
         const response = await axios.get(`/discover/${params.explore}`,{
@@ -55,9 +53,9 @@ const ExplorePage = () => {
   return (
     <div className='py-16'>
         <div className='container mx-auto'>
-            <h3 className='capitalize text-lg lg:text-xl font-semibold my-3'>Popular {params.explore} show</h3>
+            <h3 className='capitalize text-lg lg:text-xl font-semibold my-3 px-3'>Popular {params.explore} show</h3>
 
-            <div className='grid grid-cols-[repeat(auto-fit,230px)] gap-6 justify-center lg:justify-start'>
+            <div className='grid grid-cols-2 md:grid-cols-[repeat(auto-fit,230px)] gap-6 justify-center lg:justify-start px-3'>
               {
                 data.map((exploreData,index)=>{
                   return(
