@@ -37,8 +37,8 @@ const Header = () => {
                     {
                         navigation.map((nav,index)=>{
                             return(
-                                <div>
-                                    <NavLink key={nav.label+"header"+index} to={nav.href} className={({isActive})=>`px-2 hover:text-neutral-100 ${isActive && "text-neutral-100"}`}>
+                                <div key={nav.label+"header"+index}>
+                                    <NavLink  to={nav.href} className={({isActive})=>`px-2 hover:text-neutral-100 ${isActive && "text-neutral-100"}`}>
                                         {nav.label}
                                     </NavLink>
                                 </div>

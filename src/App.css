@@ -1,3 +1,27 @@
-.scrolbar-none::-webkit-scrollbar{
-    display: none;
+.custom-scrolbar::-webkit-scrollbar{
+  height: 8px;
+  cursor: pointer;
+  display: none;
 }
+.custom-scrolbar::-webkit-scrollbar-thumb {
+  background: #636363;
+  border-radius: 10px;
+}
+.custom-scrolbar::-webkit-scrollbar-track {
+  background: #a8a8a8;
+  border-radius: 10px;
+}
+@media screen and (min-width: 1024px) {
+  .custom-scrolbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+.scroll-container {
+    overflow-x: scroll;
+    scrollbar-width: 5px;
+    -ms-overflow-style: none;
+  }
+  
+  .scroll-container::-webkit-scrollbar {
+    display: none;
+  }

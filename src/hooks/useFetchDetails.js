@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 const useFetchDetails = (endpoint)=>{
     const [data,setData] = useState()
     const [loading,setLoading] = useState(false)
+    const [error, setError] = useState(false)
 
     const fetchData = async()=>{
         try {
@@ -13,14 +14,16 @@ const useFetchDetails = (endpoint)=>{
             setData(response.data)
         } catch (error) {
             console.log('error',error)
+            setError(error)
        }
     }
 
     useEffect(()=>{
         fetchData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[endpoint])
 
-    return { data , loading}
+    return { data , loading, error}
 }
 
 export default useFetchDetails

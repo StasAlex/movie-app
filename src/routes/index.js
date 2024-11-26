@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import ExplorePage from "../pages/ExplorePage";
 import DetailsPage from "../pages/DetailsPage";
 import SearchPage from "../pages/SearchPage";
+import PersonDetails from "../pages/PersonDetails";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
             {
                 path : ":explore/:id",
                 element : <DetailsPage/>
+            },
+            {
+                path: "person/:id",
+                element: <PersonDetails/>
             },
             {
                 path : "search",
